@@ -1,3 +1,5 @@
+npm install --save body-parser 
+========================
 npm i nodemon  -g;
 npm install;
 npm start;
