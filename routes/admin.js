@@ -2,23 +2,18 @@ const express = require("express");
 const path = require("path");
 const rootDir = require("../util/path");
 const router = express.Router();
-
+const products = [];
 router.use("/favicon.ico", (req, res, next) => {});
 
-// /admin/add-product => GET
-router.get("/add-product", (req, res, next) => {
+router.get("/add-product", (req, res, next) => {// /admin/add-product => GET
   console.log("Inside 'GET: admin/add-product' route!");
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
 });
-
-// /admin/add-product => POST
-router.post("/add-product", (req, res, next) => {
+router.post("/add-product", (req, res, next) => {// /admin/add-product => POST
   console.log("Inside 'POST: admin/add-product' route!");
-  console.log(
-    "Inside 'POST: admin/add-product' route! => request body: ",
-    req.body
-  );
+  products.push({title: req.body.title})
   res.redirect("/");
 });
 
-module.exports = router;
+exports.routes = router;
+exports.products = products;
