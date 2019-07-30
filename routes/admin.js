@@ -5,14 +5,30 @@ const router = express.Router();
 const products = [];
 router.use("/favicon.ico", (req, res, next) => {});
 
-router.get("/add-product", (req, res, next) => {// /admin/add-product => GET
+router.get("/add-product", (req, res, next) => {
+  // /admin/add-product => GET
   console.log("Inside 'GET: admin/add-product' route!");
-  // res.sendFile(path.join(rootDir, "views", "add-product.html"));
-  res.render('add-product', {pageTitle: "Add Product",label: 'Insert Your Favorit Book'})
+
+  // res.render("add-product", {
+  //   pageTitle: "Add Product",
+  //   label: "Insert Your Favorit Book",
+  //   path: "/admin/add-product"
+  // });//============PUG
+
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    label: "Insert Your Favorit Book",
+    path: "/admin/add-product",
+    layout: false, //Special Key: very important
+    formsCSS: true,
+    productCSS: true,
+    activeAddProduct: true
+  }); //handlebars
 });
-router.post("/add-product", (req, res, next) => {// /admin/add-product => POST
+router.post("/add-product", (req, res, next) => {
+  // /admin/add-product => POST
   console.log("Inside 'POST: admin/add-product' route!");
-  products.push({title: req.body.title})
+  products.push({ title: req.body.title });
   res.redirect("/");
 });
 
