@@ -7,7 +7,8 @@ router.use("/favicon.ico", (req, res, next) => {});
 
 router.get("/add-product", (req, res, next) => {// /admin/add-product => GET
   console.log("Inside 'GET: admin/add-product' route!");
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  // res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  res.render('add-product', {label: 'Insert Your Favorit Book:'})
 });
 router.post("/add-product", (req, res, next) => {// /admin/add-product => POST
   console.log("Inside 'POST: admin/add-product' route!");

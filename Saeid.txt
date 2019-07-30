@@ -1,3 +1,6 @@
+Installing 3 template engine:
+$ npm i --save ejs pug express-handlebars
+========================
 npm install --save body-parser 
 ========================
 npm i nodemon  -g;
