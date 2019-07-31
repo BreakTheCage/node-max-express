@@ -8,17 +8,22 @@ const expressHbs = require("express-handlebars");
 
 const app = express();
 
-//==================HandleBart
-app.engine(
-  "hbs",
-  expressHbs({
-    layoutsDir: "views/layouts/",
-    defaultLayout: "main-layout"
-    // extname: "hbs"
-  })
-);
-app.set("view engine", "hbs");
+//==================EJS
+app.set("view engine", "ejs");
 app.set("views", "views");
+
+
+//==================HandleBart
+// app.engine(
+//   "hbs",
+//   expressHbs({
+//     layoutsDir: "views/layouts/",
+//     defaultLayout: "main-layout"
+//     // extname: "hbs"
+//   })
+// );
+// app.set("view engine", "hbs");
+// app.set("views", "views");
 
 //==================PUG
 // app.set("view engine", "pug");
