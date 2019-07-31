@@ -19,11 +19,11 @@ router.get("/add-product", (req, res, next) => {
     pageTitle: "Add Product",
     label: "Insert Your Favorit Book",
     path: "/admin/add-product",
-    layout: false, //Special Key: very important
+    // layout: false, //Special Key: very important
     formsCSS: true,
     productCSS: true,
     activeAddProduct: true
-  }); //handlebars
+  }); //EJS and handlebars
 });
 router.post("/add-product", (req, res, next) => {
   // /admin/add-product => POST
