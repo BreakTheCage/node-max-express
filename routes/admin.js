@@ -1,12 +1,14 @@
 const express = require("express");
 const path = require("path");
-const productControllers = require('../controllers/products');
+const adminController = require('../controllers/admin');
 const router = express.Router();
 
 router.use("/favicon.ico", (req, res, next) => {});
 
-router.get("/add-product", productControllers.getAddProduct);
+router.get("/add-product", adminController.getAddProduct);
+router.post("/add-product", adminController.postAddProduct);
 
-router.post("/add-product", productControllers.postAddProduct);
+//get: Admin Products
+router.get("/products");
 
 module.exports = router;
