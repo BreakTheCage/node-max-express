@@ -1,15 +1,18 @@
-const express = require("express");
-const path = require("path");
-const adminController = require("../controllers/admin");
+const path = require('path');
+
+const express = require('express');
+
+const adminController = require('../controllers/admin');
+
 const router = express.Router();
 
-router.use("/favicon.ico", (req, res, next) => {});
+// /admin/add-product => GET
+router.get('/add-product', adminController.getAddProduct);
 
-router.get("/add-product", adminController.getAddProduct);
+// /admin/products => GET
+router.get('/products', adminController.getProducts);
 
-//get: Admin Products
-router.get("/products", adminController.getProducts);
-
-router.post("/add-product", adminController.postAddProduct);
+// /admin/add-product => POST
+router.post('/add-product', adminController.postAddProduct);
 
 module.exports = router;
