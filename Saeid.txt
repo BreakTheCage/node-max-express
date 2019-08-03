@@ -1,3 +1,6 @@
+https://dev.mysql.com/downloads/windows/installer/8.0.html
+mysqlpass
+==============================
 Installing 3 template engine:
 $ npm i --save ejs pug express-handlebars
 ========================
